@@ -1,0 +1,142 @@
+/* Archivo: styles.css */
+
+/* 1. Variables Globales (Paleta extraída de la guía de diseño de GrocerQuick POS) */
+:root {
+    /* Paleta de colores primarios y de acento */
+    --primary: #007979;      /* Teal oscuro principal para encabezados y botones */
+    --secondary: #24B1B1;    /* Cyan brillante para acentos secundarios */
+    --tertiary: #9F5B34;     /* Terracota/marrón para detalles cálidos */
+    --neutral: #737877;      /* Gris neutro para párrafos y descripciones */
+    --bg-light: #f6f8f8;     /* Fondo general claro de la aplicación */
+    --white: #ffffff;        /* Blanco puro para tarjetas y elementos contenedores */
+    --text-dark: #121826;    /* Oscuro profundo para máxima legibilidad en títulos */
+
+    /* Tipografías oficiales declaradas en la guía visual */
+    --font-headline: 'Work Sans', sans-serif;
+    --font-body: 'Work Sans', sans-serif;
+    --font-label: 'JetBrains Mono', monospace;
+}
+
+/* Reset básico para estandarizar el comportamiento entre navegadores */
+* {
+    box-sizing: border-box; /* Incluye padding y border en el ancho total del elemento */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* 2. Barra de Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Separa el logo de los enlaces a los extremos */
+    align-items: center;            /* Centra los elementos verticalmente */
+    padding: 1.2rem 6%;
+    background-color: var(--bg-light);
+}
+
+.logo {
+    font-family: var(--font-headline);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Espaciado uniforme entre los enlaces */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary); /* Cambia de color al pasar el cursor */
+}
+
+/* Botón de Login estilizado con la fuente Mono especificada */
+.btn-login {
+    background-color: var(--primary);
+    color: var(--white) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-family: var(--font-label); /* Aplica JetBrains Mono */
+    font-size: 0.85rem !important;
+    transition: background-color 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: #005a5a; /* Tono más oscuro al hacer hover */
+}
+
+/* 3. Sección Hero / Presentación Principal */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 6%;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor principal */
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-headline);
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+    line-height: 1.15;
+}
+
+.hero-content p {
+    color: var(--neutral);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-cta:hover {
+    background-color: #005a5a;
+    transform: translateY(-2px); /* Microinteracción de elevación */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Sombra suave para dar profundidad */
+    object-fit: cover;
+}
