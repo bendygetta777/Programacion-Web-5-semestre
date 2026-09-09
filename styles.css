@@ -140,3 +140,98 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Sombra suave para dar profundidad */
     object-fit: cover;
 }
+
+/* 4. Sección de Servicios (Maquetación dinámicamente adaptada con Flexbox) */
+.services {
+    padding: 3rem 6%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-headline);
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 2.5rem;
+}
+
+/* Contenedor flexible de tarjetas */
+.services-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas fluyan a la siguiente línea si no caben */
+    gap: 1.5rem;      /* Hueco consistente entre filas y columnas */
+    justify-content: space-between;
+}
+
+/* Tarjeta individual de servicio */
+.service-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden; /* Corta la imagen si sobresale de las esquinas redondeadas */
+    border: 1px solid #e2e8f0;
+    /* Calcula el 25% del ancho menos el espacio del gap para lograr 4 columnas exactas */
+    flex: 1 1 calc(25% - 1.5rem);
+    min-width: 220px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Envoltorio de imagen para control de dimensiones */
+.card-img {
+    height: 150px;
+    width: 100%;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción de la imagen sin deformarla */
+}
+
+.service-card h3 {
+    font-family: var(--font-headline);
+    font-size: 1rem;
+    padding: 1rem;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+/* 5. Pie de Página */
+.footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--neutral);
+    font-size: 0.85rem;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 3rem;
+}
+
+/* 6. Adaptabilidad Responsiva (Media Queries) */
+@media (max-width: 850px) {
+    .hero {
+        flex-direction: column; /* Apila el texto y la imagen en pantallas medianas */
+        text-align: left;
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+
+    .service-card {
+        /* Pasa de 4 columnas a 2 columnas en tabletas */
+        flex: 1 1 calc(50% - 1.5rem);
+    }
+}
+
+@media (max-width: 500px) {
+    .service-card {
+        /* Pasa a 1 columna completa en teléfonos móviles */
+        flex: 1 1 100%;
+    }
+}
