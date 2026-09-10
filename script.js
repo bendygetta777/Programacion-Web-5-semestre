@@ -62,3 +62,30 @@ function renderizarServicios(listaServicios) {
         contenedor.appendChild(card);
     });
 }
+
+// 3. Inicialización del sistema una vez que el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Invocamos la función de renderizado de datos
+    renderizarServicios(serviciosData);
+
+    // Captura y manejo del evento en el botón principal (Hero CTA)
+    const btnComenzar = document.getElementById('btnComenzar');
+    if (btnComenzar) {
+        btnComenzar.addEventListener('click', (event) => {
+            event.preventDefault(); // Evita la recarga automática por el href="#"
+            console.log('Interacción: Clic en el botón Comenzar Ahora');
+            alert('¡Bienvenido a GrocerQuick POS! Redirigiendo al panel principal...');
+        });
+    }
+
+    // Captura y manejo del evento en el botón de Login (Navbar)
+    const btnLogin = document.getElementById('btnLogin');
+    if (btnLogin) {
+        btnLogin.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log('Interacción: Clic en el botón Login');
+            alert('Acceso al sistema administrativo.');
+        });
+    }
+});
