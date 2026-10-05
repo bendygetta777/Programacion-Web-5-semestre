@@ -1,0 +1,16 @@
+# Dependencias instaladas
+node_modules/
+
+# Archivos de distribución / compilación
+dist/
+
+# Variables de entorno y credenciales sensibles (¡NUNCA SUBIR!)
+.env
+*.env
+
+# Archivos y logs del sistema o entorno
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+.vscode/
